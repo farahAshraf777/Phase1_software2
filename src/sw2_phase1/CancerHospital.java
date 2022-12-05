@@ -3,9 +3,12 @@ package sw2_phase1;
 public class CancerHospital extends donations {
 
 	@Override
-	void donationForm(double cost, String mobileNum) {
-		
-		
+	public void servicename() {
+		// TODO Auto-generated method stub
+		System.out.println("CancerHospital");
 	}
+
+	
+	
 
 }

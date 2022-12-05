@@ -1,5 +1,10 @@
 package sw2_phase1;
 
-public class account {
+public interface account {
+	
+
+	public void signUp(String sUp) ;
+	public void signin(String sIn) ;
+	
 	
 }

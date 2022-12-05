@@ -1,11 +1,22 @@
 package sw2_phase1;
 
-public class InternetUser extends user {
-
-	@Override
-	public service creatService(String typeOfService) {
-		// TODO Auto-generated method stub
-		return null;
+public class InternetUser implements user {
+	public internetPayment getservice(String name) {
+		if(name.equalsIgnoreCase("Vodafone")){
+	         return new InternetPaymentVodafone();
+	         
+	      } 
+		else if(name.equalsIgnoreCase("Orange")){
+	         return new InternetPaymentOrange();
+	         
+	      } 
+		else if(name.equalsIgnoreCase("We")){
+	         return new InternetPaymentWe();
+	      }
+		else if(name.equalsIgnoreCase("Etisalat")){
+	         return new InternetPaymentEtisalat();
+	      }
+		
+	      return null;
 	}
-
 }

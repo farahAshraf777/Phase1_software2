@@ -1,22 +1,19 @@
 package sw2_phase1;
 
-public class wallet implements wayOfPayment{
-	int amount = 1000;
+public class wallet extends wayOfPayment{
+	double amount = 1000 ;
     String res;
 	@Override
-	public String pay(int cost) {
-		// TODO Auto-generated method stub
-		if(cost > amount)
+	public String pay() {
+		if(getcost() > amount)
 		{
 			res = "There is no enough money";
 		}
 		else
 		{
-			res = "Done";
-			amount = amount - cost;
+			res = "payment Done Successfully";
+			amount = amount - (getcost());
 		}
 		return res;
 	}
 }
-
-

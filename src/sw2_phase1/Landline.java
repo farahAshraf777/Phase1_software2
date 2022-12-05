@@ -1,7 +1,9 @@
 package sw2_phase1;
 
-public abstract class Landline extends service{
-
-	public abstract void landlineForm(double cost, String mobileNum);
-
+public abstract class Landline implements service{
+	public abstract void servicename();
+	public void servicform(double cost, String mobileNum) {
+		System.out.println(cost);
+		System.out.println(mobileNum);
+	}
 }

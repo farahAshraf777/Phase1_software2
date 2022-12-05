@@ -1,20 +1,23 @@
 package sw2_phase1;
 
-public class accountuser implements account {
+import java.util.Map;
+
+public class Accountuser implements account{
 	userForm uf;
+	public Accountuser(userForm uf) {
 
-	public accountuser(userForm uf) {
-		this.uf = uf;
+		this.uf=uf;
+
+		}
+
+	public void signUp(String sUp) {
+		uf.createForm(sUp);
 	}
 
-	public void signUp() {
-		uf.createForm();
+	
+	public void signin(String sIn) {
+		uf.createForm(sIn);
 	}
 
-	@Override
-	public void signin() {
-		// TODO Auto-generated method stub
-		uf.createForm();
-	}
-
+	
 }

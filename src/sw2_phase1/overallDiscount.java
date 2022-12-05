@@ -1,15 +1,15 @@
 package sw2_phase1;
 
 public class overallDiscount extends discount {
-	payment p;
-	double c;
-	public overallDiscount(payment p, double c) {
-		this.p = p;
-		this.c = c;
+	admin discountvalue;
+	//wayOfPayment pay;
+	public overallDiscount(admin discountvalue ,Cost c) {
+		super(c);
+		this.discountvalue=discountvalue;
+		//this.pay =pay;
 	}
 	@Override
-	public double Cost() {
-		return ((p.Cost())*c);
+	public double cost() {
+		return Math.abs((c.cost())*(discountvalue.getDiscountValue())-c.cost());
 	}
-
 }

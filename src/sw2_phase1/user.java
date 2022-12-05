@@ -1,7 +1,6 @@
 package sw2_phase1;
 
-public abstract class user {
+public interface user {
 	
 	
-	 public abstract service creatService(String typeOfService);
 }

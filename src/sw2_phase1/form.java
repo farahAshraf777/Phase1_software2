@@ -1,5 +1,5 @@
 package sw2_phase1;
 
 public interface form {
-	public void createForm();
+	public void createForm(String sign);
 }

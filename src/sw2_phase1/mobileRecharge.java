@@ -1,12 +1,10 @@
 package sw2_phase1;
 
-public class mobileRecharge extends service{
-	provider p ;
-	public mobileRecharge(provider p) {
-		this.p= p;
-	}
-	public void mobileRechargeForm(double Cost , String amout) {
-		p.ProviderForm(Cost, amout);
+public abstract class mobileRecharge implements service{
+	public abstract void servicename();
+	public void servicform(double cost, String mobileNum) {
+		System.out.println(cost);
+		System.out.println(mobileNum);
 	}
 	
 }

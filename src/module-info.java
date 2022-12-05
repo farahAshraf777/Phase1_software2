@@ -2,8 +2,8 @@
  * 
  */
 /**
- * @author seif
+ * @author f
  *
  */
-module software2_phase1 {
+module software2 {
 }

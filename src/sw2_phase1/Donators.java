@@ -1,26 +1,19 @@
 package sw2_phase1;
 
-public class Donators extends user{
-
-	//service s = new donation();
-	@Override
-	 public service creatService(String typeOfService) {
-	
-			if(typeOfService=="NGO") {
-				return new NGO();
-			}
-			else if(typeOfService=="school") {
-				return new DSchools();
-			}
-			else if(typeOfService=="CancerHospital") {
-				return new CancerHospital();
-			}
-			
-			return null;
+public class Donators implements user{
+	public donations getservice(String name) {
+		if(name.equalsIgnoreCase("NGO")){
+	         return new NGO();
+	         
+	      } 
+		else if(name.equalsIgnoreCase("CancerHospital")){
+	         return new CancerHospital();
+	         
+	      } 
+		else if(name.equalsIgnoreCase("DSchools")){
+	         return new DSchools();
+	      }
 		
-	
+	      return null;
 	}
-
-	
-
 }

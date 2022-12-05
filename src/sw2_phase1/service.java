@@ -1,7 +1,8 @@
 package sw2_phase1;
 
-public abstract class service {
-
+public interface service {
+	public void servicename();
+	//public void servicform();
  //abstract void getInformation(double cost ,String mobileNum);
 	
 }

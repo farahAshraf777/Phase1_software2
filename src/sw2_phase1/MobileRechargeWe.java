@@ -1,13 +1,11 @@
 package sw2_phase1;
 
-public class DSchools extends donations  {
+public class MobileRechargeWe extends mobileRecharge{
 
 	@Override
 	public void servicename() {
 		// TODO Auto-generated method stub
-		System.out.println("DSchools");
+		System.out.println("Mobile Recharge We");
 	}
 
-	
-	
 }
