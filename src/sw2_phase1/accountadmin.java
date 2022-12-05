@@ -6,15 +6,13 @@ public class accountadmin implements account {
 		this.ad = ad;
 	}
 	@Override
-	public void signUp() {
-		// TODO Auto-generated method stub
-		ad.createForm();
+	public void signUp(String sUp) {
+		ad.createForm(sUp);
+		
 	}
-
 	@Override
-	public void signin() {
-		// TODO Auto-generated method stub
-		ad.createForm();
+	public void signin(String sIn) {
+		ad.createForm(sIn);
 	}
 
 }

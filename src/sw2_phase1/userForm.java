@@ -28,6 +28,8 @@ public class userForm implements form{
 			}
 			else if(((check.CheckAccount(Email)) == "False")) {
 				s.setUserName_password(Email, pass);
+				System.out.println("your account created successfully");
+
 			}
 		}
 		else {
@@ -38,7 +40,7 @@ public class userForm implements form{
 			String pass = myObj.nextLine();
 			
 			if( ((check.CheckAccount(Email)) == "true")) {
-				System.out.println("Hello" + Email);
+				System.out.println("Hello " + Email);
 			}
 			else if(((check.CheckAccount(Email)) == "False")) {
 				System.out.println("Error, this account is not exist you should sign up first");

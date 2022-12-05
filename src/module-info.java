@@ -5,5 +5,5 @@
  * @author f
  *
  */
-module software2 {
+module Softwaer2_phase1 {
 }

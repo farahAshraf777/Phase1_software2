@@ -32,6 +32,20 @@ public class main {
 //		account ac = new Accountuser(uf);
 //		ac.signUp();
 //		s.getMap();
+//		Storage s = new Storage();
+//		check c = new check(s);
+//		userForm uf = new userForm(s, c);
+//		account ac = new Accountuser(uf);
+//		ac.signUp("sign up");
+//		
+//		ac.signUp("sign in");
+//		s.getMap();
+//		Storage s = new Storage();
+//		wallet  w = new wallet();
+//		check c = new check(s, w);
+//		userRequest d = new userRequest();
+//		d.setcheck(c);
+//		d.addAmount(5000);
 		
 //		Donators u = new Donators();
 //		donations d = u.getservice("NGO");
@@ -100,12 +114,17 @@ public class main {
 		//service g = new NGO();
 		
 		//double value = 0.0 ;
-		admin d = new admin();
+//		admin d = new admin();
 		//Scanner myObj = new Scanner(System.in);
 		//System.out.println("Enter username");
 		//double value = myObj.ne();
-		userRequest s = new userRequest();
-		s.checkDiscount(0);
+//		userRequest s = new userRequest();
+//		s.checkDiscount(0);
+		
+		admin s = new admin();
+		adminForm f = new adminForm(s);
+		accountadmin d = new accountadmin(f);
+		d.signUp("sign up");
 		
 	}
 

@@ -3,9 +3,6 @@ package sw2_phase1;
 import java.util.Vector;
 
 public class admin {
-//	String adminName;
-//	String Email;
-//	String password;
 	double value;
 	Storage s ;
 	public void setStorage(Storage s) {
@@ -16,21 +13,6 @@ public class admin {
 		 return s.getRefunReq();
 	}
 	
-	
-//	public void setadminName(String adminName)
-//	{
-//		this.adminName = adminName;
-//	}
-//	
-//	public void setEmail(String Email)
-//	{
-//		this.Email = Email;
-//	}
-//	
-//	public void setpassword(String password)
-//	{
-//		this.password = password;
-//	}
 	public void setDiscountValue(double value) {
 		this.value=value;
 	}

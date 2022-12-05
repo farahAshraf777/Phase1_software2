@@ -9,13 +9,21 @@ import java.util.Vector;
 public class Storage {
 	 
 	 Vector<String> refundRequest =new Vector<String>();
-	 
+	 Vector<String> refundstate =new Vector<String>();
 	 public void  setRefund (String RefundReq) {
 		 refundRequest.add(RefundReq);
 	 }
 	 
 	 public Vector<String> getRefunReq(){
 		return refundRequest;
+		 
+	 }
+	 public void  setrefundstate (String state) {
+		 refundstate.add(state);
+	 }
+	 
+	 public Vector<String> getrefundstate(){
+		return refundstate;
 		 
 	 }
 	 

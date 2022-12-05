@@ -9,10 +9,5 @@ public class payment {
 	public String pay() {
 		return (pay.pay());
 	}
-//	public abstract double Cost();
-//	public String paymenttype(int cost) {
-//		return (pay.pay(cost));
-//	}
 
-	
 }
