@@ -3,7 +3,7 @@ package sw2_phase1;
 import java.util.Vector;
 
 public class admin {
-	double value;
+	double value = 0;
 	Storage s ;
 	public void setStorage(Storage s) {
 		this.s = s;

@@ -6,126 +6,101 @@ import java.util.Scanner;
 public class main {
 
 	public static void main(String[] args) {
-//		double b = 500;
-//		double c = 0.5;
-//		payment p = new paymentWithoutDiscount(b);
-//		p = new overallDiscount(p, c);
-//		System.out.println(p.Cost());
-//		
-//	donations s = new NGO();
-//s.donationForm(30, "011000297866");
-//		user s = new LandlineUser();
-		//s.creatService("QuarterReceipt");
-//		service g = s.creatService("QuarterReceipt"); 
-//		g.landlineForm(30.0,"09876898676");
-//		Donators d = new Donators(); 
-//		d.creatService("NGO");
-//		donations n = new NGO();
-//		n.donationForm(30.3, "09876898676");
-		
-//		wayOfPayment x = new creditcard();
-//		payment y = new paymentWithoutDiscount(2.00,x);
-//		y.p(200);
-		
-//		Storage s = new Storage();
-//		userForm uf = new userForm(s);
-//		account ac = new Accountuser(uf);
-//		ac.signUp();
-//		s.getMap();
-//		Storage s = new Storage();
-//		check c = new check(s);
-//		userForm uf = new userForm(s, c);
-//		account ac = new Accountuser(uf);
-//		ac.signUp("sign up");
-//		
-//		ac.signUp("sign in");
-//		s.getMap();
-//		Storage s = new Storage();
-//		wallet  w = new wallet();
-//		check c = new check(s, w);
-//		userRequest d = new userRequest();
-//		d.setcheck(c);
-//		d.addAmount(5000);
-		
-//		Donators u = new Donators();
-//		donations d = u.getservice("NGO");
-//		d.servicename();
-//		d.servicform(200.00, "5465655");
-//		InternetUser lu = new InternetUser();
-//		internetPayment l = lu.getservice("We");
-//		l.servicename();
-//		l.servicform(20.33, "09876898676");
+		//Admin should enter first to set discount and amounts we need
+		int Admin_choice = 0;
+		double Discount_value;
+		Storage DataBase = new Storage();
+		RefundController RefundC = new RefundController(DataBase);
+		admin adminObj = new admin();
+		adminForm FORM = new adminForm(adminObj);
+		accountadmin Ac_Ad = new accountadmin(FORM);
+		Scanner myObj = new Scanner(System.in);
+		while(Admin_choice != 5) {
+			System.out.println("Admin Options");
+			System.out.println("1. Sign up");
+			System.out.println("2. Sign in");
+			System.out.println("3. Add discount amount");
+			System.out.println("4. Show refund requests to accept it or reject it");
+			System.out.println("5. Exit");
+			System.out.println("Enter your choice For example 2 to sign in");
+			int choice = myObj.nextInt();
+			Admin_choice = choice;
+			
+			if(Admin_choice == 1) {
+				Ac_Ad.signUp("sign up");
+			}else if(Admin_choice == 2) {
+				Ac_Ad.signUp("sign in");
+			}else if(Admin_choice == 3) {
+				System.out.print("Enter discount value: ");
+				Discount_value = myObj.nextDouble();
+				adminObj.setDiscountValue(Discount_value);
+			}else if(Admin_choice == 4) {
+				System.out.println(DataBase.getRefunReq());
+				RefundC.checkRefundValidation();
+				
+			}else if(Admin_choice == 5) {
+				System.out.println("Exit");
+			}
+			System.out.println("");
+		}
+		// user enter to the system and choose from options
+		int User_choice = 0;
+		wallet user_wallet = new wallet();
+		check ch =new check(DataBase, user_wallet);
+		userForm user = new userForm(DataBase, ch);
+		Accountuser account =new Accountuser(user);
+		userRequest request = new userRequest();
+		serviceController sc = new serviceController(DataBase);
 
-		/*Storage s=new Storage();
-		serviceController d=new serviceController(s);
-		s.servicename();
-		System.out.println(d.search("Donaons"));*/
-		
-//		check ch =new check(s);
-//		userForm user = new userForm(s,ch);
-//		Accountuser account =new Accountuser(user);
-//		account.signUp("sign up");
-//		account.signUp("sign up");
-//		account.signin("sign in");
+		while(User_choice != 9) {
+			System.out.println("User Options");
+			System.out.println("1. Sign up");
+			System.out.println("2. Sign in");
+			System.out.println("3. Choose Service Name");
+			System.out.println("4. Ask for refund");
+			System.out.println("5. Pay");
+			System.out.println("6. Check For discount");
+			System.out.println("7. Search for a service");
+			System.out.println("8. Add to wallet");
+			System.out.println("9. Exit");
+			System.out.println("Enter your choice For example 2 to sign in");
+			
+			int choice = myObj.nextInt();
+			User_choice = choice;
+			
+			if(User_choice == 1) {
+				account.signUp("sign up");
+			}else if(User_choice == 2) {
+				account.signin("sign in");
+			}else if(User_choice == 3) {
+				request.chooseService();
+			}
+			else if(User_choice == 4) {
+				System.out.println("Enter Service name for refund");
+				String Service_name = myObj.nextLine();
+				Service_name = myObj.nextLine();
+				request.askForRefund(Service_name);
+			}else if(User_choice == 5) {
+				request.paymentDiscout();
+			}else if(User_choice == 6) {
+				request.checkDiscount(adminObj);
+			}else if(User_choice == 7) {
+				System.out.println("Enter Service name");
+				String Service_name = myObj.nextLine();
+				Service_name = myObj.nextLine();
+				sc.search(Service_name);
+			}else if(User_choice == 8) {
+				System.out.print("Enter amount to be adder to wallet: ");
+				double Wallet_amount = myObj.nextDouble();
+				request.setcheck(ch);
+				request.addAmount(Wallet_amount);
 
-//		account.signUp("sign up");
-//		for (Map.Entry<String, String> me :
-//			(s.getMap()).entrySet()) {
-// 
-//           // Printing keys
-//           System.out.print(me.getKey() + ":");
-//           System.out.println(me.getValue());
-//           
-//       }
-//		for (Map.Entry<String, String> me :
-//			(s.getMap()).entrySet()) {
-// 
-//           // Printing keys
-//           System.out.print(me.getKey() + ":");
-//           System.out.println(me.getValue());
-//       }
-////	
-//		admin a = new admin();
-//		admin b = new admin ();
-//		a.setDiscountValue(0.1);
-//		b.setDiscountValue(0.1);
-//		wayOfPayment way=new creditcard();
-//		way.setcost(500.0);
-//		Cost c = new paymentWithoutDiscount(way);
-//		c = new overallDiscount(a,(new specificDiscount(b,c)));
-//		System.out.println(c.cost());
-		//Cost a = new overallDisc
-		
-		//userRequest s = new userRequest();
-		//s.paymentDiscout();
-		
-		//wayOfPayment way=new creditcard();
-		//way.setcost(300.0);
-		//payment p=new payment(way);
-		//System.out.println(p.pay());
-//		
-//		Storage s = new Storage();
-//		RefundController d = new RefundController(s);
-//		d.addRefund("hahahahahahahah");
-//		d.addRefund("rawdaa and hannen and walaa");
-//		
-		//userRequest s = new userRequest();
-		//s.askForRefund();
-		//service g = new NGO();
-		
-		//double value = 0.0 ;
-//		admin d = new admin();
-		//Scanner myObj = new Scanner(System.in);
-		//System.out.println("Enter username");
-		//double value = myObj.ne();
-//		userRequest s = new userRequest();
-//		s.checkDiscount(0);
-		
-		admin s = new admin();
-		adminForm f = new adminForm(s);
-		accountadmin d = new accountadmin(f);
-		d.signUp("sign up");
-		
+			}else if(User_choice == 9) {
+				System.out.println("Exit");
+			}
+			System.out.println("");
+		}
+		myObj.close();
 	}
-
+	
 }

@@ -20,7 +20,7 @@ public class adminForm implements form{
 			
 			System.out.println("Enter password");
 			String pass = myObj.nextLine();
-			System.out.print("Done "+ addminName);
+			System.out.println("Done "+ addminName);
 			
 		}
 		else {
@@ -29,7 +29,7 @@ public class adminForm implements form{
 			String Email = myObj.nextLine();
 			System.out.println("Enter password");
 			String pass = myObj.nextLine();
-			System.out.print("hello "+ Email);
+			System.out.println("hello "+ Email);
 		}
 	}
 }
