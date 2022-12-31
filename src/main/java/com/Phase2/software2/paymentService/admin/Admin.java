@@ -23,20 +23,5 @@ public class Admin {
 	public void setAdminPassword(String adminPassword) {
 		this.adminPassword = adminPassword;
 	}
-//	double value = 0;
-//	refundStroge s ;
-//	public void setStorage(refundStroge s) {
-//		this.s = s;
-//	}
-//
-//	public Vector<String> getlistOfRefund() {
-//		 return s.getRefunReq();
-//	}
-//	
-//	public void setDiscountValue(double value) {
-//		this.value=value;
-//	}
-//	public double getDiscountValue() {
-//		return value;
-//	}
+
 }

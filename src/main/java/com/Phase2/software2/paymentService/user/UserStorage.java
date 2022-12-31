@@ -1,6 +1,5 @@
 package com.Phase2.software2.paymentService.user;
 import java.util.HashMap;
-
 import java.util.Map;
 import java.util.Set;
 
@@ -14,7 +13,6 @@ public class UserStorage{
         if (users.get(u.getUserEmail()) != null) {
             return false;
         }
-        System.out.print(u.getUserEmail());
         users.put(u.getUserEmail(), u);
         return true;
     }
