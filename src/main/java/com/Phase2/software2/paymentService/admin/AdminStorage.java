@@ -11,7 +11,6 @@ public class AdminStorage {
 	        if (admins.get(a.getAdminEmail()) != null) {
 	            return false;
 	        }
-	        System.out.print(a.getAdminEmail());
 	        admins.put(a.getAdminEmail(), a);
 	        return true;
 	    }
